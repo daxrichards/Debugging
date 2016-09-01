@@ -1,0 +1,150 @@
+/***************************************************/
+/***************************************************/
+/***********      Debuggin Exercise      ***********/
+/***************************************************/
+/***************************************************/
+
+
+/***************************************************/
+/***********   Roll Dice Assignment      ***********/
+/***************************************************/
+
+**No bugs**
+
+I used the debug feature of eclipse to test the for loop in the main line of this project which was designed to execute 100 times.  
+Within the for loop, a call is made to a roll method. The roll method uses a while loop to generate a random number and assign that
+random number to a variable called "rand."  The while loop iterates repeatedly until a one is generated. 
+
+The debugging tool displayed the value of rand in the display window under the "Variables" tab.  I could see the value of rand change until
+a one was generated.  In addition, I manually changed the value of "rand" in debugging mode to inspect the next steps in the path, rather than waiting for a one
+to be generated randomly.
+
+I used this same technique of changing the value of the index with the debugger, rather than laboriously iterating through the loop 100 times. 
+
+
+/***************************************************/
+/***********   Simple Craps Game         ***********/
+/***************************************************/
+
+**Bug Present**
+
+I introduced a bug into the program to test the importance of ( && vs || ) in a condition.  The following statemnt would always evaluate to false, and 
+as a result created an infinite loop:
+
+ Line #61     while(subSpinTotal != 7 || subSpinTotal != thePoint );  //Incorrect Code
+              while(subSpinTotal != 7 && subSpinTotal != thePoint );  //Correct code
+
+
+
+
+/***************************************************/
+/***********       RPN Calculator        ***********/
+/***************************************************/
+
+**No Bugs**
+
+I used the debugging tool to investigate the loading of values from an array into a stack. I was able to see the value of each character in the 
+array as I iterated through the for loop. Each value was handled accordingly.  If the "getNumericValue method returned a positive integer, 
+it was added to the stack. If a -1 was returned, I could see that the value was an operator, and thus filtered accordingly through the switch statement. 
+ An operation was performed and a result was stored in a variable called "answer".
+
+The "answer" was popped off of the stack and then displayed to the console.
+
+
+
+/***************************************************/
+/***********  Class Roster and Database  ***********/
+/***************************************************/
+
+**Bug Present**
+
+I introduced a bug in the program to duplicate a Java array out of bounds error by starting my array index from 1 instead of 0.  When I attempted to load
+the array into an arrayList, the out bounds displayed a null value.  
+
+
+( Line #47 "Student" )
+for(String[] aStudent: student ){
+		
+		Student newStudent = new Student();
+		
+		newStudent.setId( aStudent[1]);               //Incorrect
+		newStudent.setFirstName( aStudent[2]);
+		newStudent.setLastName(aStudent[3]);
+		newStudent.setEyeColor(aStudent[4]);
+		newStudent.setMonthsEmployed( aStudent[5]);  //Fifth index out of bounds
+		
+		students.add(newStudent);
+	}
+
+
+for(String[] aStudent: student ){
+		
+		Student newStudent = new Student();
+		
+		newStudent.setId( aStudent[0]);         //First index of array at zero
+		newStudent.setFirstName( aStudent[1]);
+		newStudent.setLastName(aStudent[2]);
+		newStudent.setEyeColor(aStudent[3]);
+		newStudent.setMonthsEmployed( aStudent[4]);
+		
+		students.add(newStudent);
+	}
+
+
+
+/***************************************************/
+/***********    Simulated Bowling Game   ***********/
+/***************************************************/
+
+**Bug Present**
+
+I attempted to create a for each loop, but referenced the incorrect array when using the length property.  This resulted in an out of bounds error of a two dimensional array. 
+The debugging tool was quite useful in inspecting the values returned by the length property which confirmed that there was indeed a mix up.
+
+(Line #29 of SimulatedBowling Class)
+ for (int game = 0; game < bowling[0].length; game++)  {  **incorrect**  bowling[0].length  - this refers to the second/inner array
+ for (int game = 0; game < bowling.length; game++)  {     **correct**- this refers to the second/inner array
+
+
+
+/***************************************************/
+/***********     The Bank Statement      ***********/
+/***************************************************/
+
+**Bug Present**
+
+In this case, I multiplied the interest rate by 100 in the setIntRate() in order to display the value as a percentage.  However, I did not divide the balance by 100 when
+calculating the amount of interest to be deposited into a person's account.  As a result, the amount of interest deposited was 100x greater than it should have been.  I was
+able to use the debugging tool to step through the method to calulate the interest, and inspect the value of the variables during execution.
+
+
+(Line #47 of Savings Class)
+public double CalcDepositInterest(int months) {
+	
+		if ((isBelowMin() == false) && getIntRate() > 0){
+			double amount = (((getIntRate())/12)*months) * this.getBalance(); <<-Incorrect 
+
+
+public double CalcDepositInterest(int months) {
+	
+		if ((isBelowMin() == false) && getIntRate() > 0){
+			double amount = (((getIntRate())/12)*months) * this.getBalance() / 100; <<- Correct
+
+
+
+
+
+
+
+
+
+
+
+
+															
+
+			
+
+ 
+
+
