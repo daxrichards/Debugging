@@ -29,7 +29,7 @@ I used this same technique of changing the value of the index with the debugger,
 
 **Bug Present**
 
-I introduced a bug into the program to test the importance of ( && vs || ) in a condition.  The following statemnt would always evaluate to false, and 
+I introduced a bug into the program to test the importance of ( && vs || ) in a condition.  The following statement would always evaluate to false, and 
 as a result created an infinite loop:
 
  Line #61     while(subSpinTotal != 7 || subSpinTotal != thePoint );  //Incorrect Code
