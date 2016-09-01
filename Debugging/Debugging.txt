@@ -1,6 +1,6 @@
 /***************************************************/
 /***************************************************/
-/***********      Debuggin Exercise      ***********/
+/***********      Debugging Exercise      ***********/
 /***************************************************/
 /***************************************************/
 
@@ -16,10 +16,11 @@ Within the for loop, a call is made to a roll method. The roll method uses a whi
 random number to a variable called "rand."  The while loop iterates repeatedly until a one is generated. 
 
 The debugging tool displayed the value of rand in the display window under the "Variables" tab.  I could see the value of rand change until
-a one was generated.  In addition, I manually changed the value of "rand" in debugging mode to inspect the next steps in the path, rather than waiting for a one
-to be generated randomly.
+a one was generated.  In addition, I manually changed the value of "rand" in debugging mode to inspect the next steps in the path, rather
+than waiting for a one to be generated randomly.
 
-I used this same technique of changing the value of the index with the debugger, rather than laboriously iterating through the loop 100 times. 
+I used this same technique of changing the value of the index with the debugger, rather than laboriously iterating through the loop
+100 times. 
 
 
 /***************************************************/
@@ -48,7 +49,8 @@ array as I iterated through the for loop. Each value was handled accordingly.  I
 it was added to the stack. If a -1 was returned, I could see that the value was an operator, and thus filtered accordingly through the switch statement. 
  An operation was performed and a result was stored in a variable called "answer".
 
-The "answer" was popped off of the stack and then displayed to the console.
+The debugging tool was useful in displaying for displaying the value of "answer", and ensuring the correct value was popped off of the
+stack and then displayed to the console.
 
 
 
